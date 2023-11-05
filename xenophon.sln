@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xenophon", "xenophon.csproj", "{E1595078-F3EC-4662-BC2F-CBB3FBF2DE1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1595078-F3EC-4662-BC2F-CBB3FBF2DE1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1595078-F3EC-4662-BC2F-CBB3FBF2DE1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1595078-F3EC-4662-BC2F-CBB3FBF2DE1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1595078-F3EC-4662-BC2F-CBB3FBF2DE1E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F1B48AAD-C660-442F-88E3-6C6ED77CF953}
+	EndGlobalSection
+EndGlobal
