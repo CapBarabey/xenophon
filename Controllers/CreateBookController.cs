@@ -57,7 +57,7 @@ namespace xenophon.Controllers
             string[] _inserts =
             {
                 $"INSERT INTO Total(" +
-                    $"book_id, _total)" +
+                    $"book_id, point)" +
                     $"VALUES(" +
                     $"{BOOKID}, 'incomes'), " +
                     $"({BOOKID}, 'expenses'), " +
@@ -67,7 +67,7 @@ namespace xenophon.Controllers
                     $"({BOOKID}, 'savings_balance')"
                     ,
                 $"INSERT INTO Incomes(" +
-                    $"book_id, incomes)" +
+                    $"book_id, point)" +
                     $"VALUES(" +
                     $"{BOOKID}, 'salary'), " +
                     $"({BOOKID}, 'hobby'), " +
@@ -80,7 +80,7 @@ namespace xenophon.Controllers
                     $"({BOOKID}, 'total_income')"
                     ,
                 $"INSERT INTO Savings(" +
-                    $"book_id, savings)" +
+                    $"book_id, point)" +
                     $"VALUES(" +
                     $"{BOOKID}, 'to_savings_accounts'), " +
                     $"({BOOKID}, 'for_unforeseen_expenses'), " +
@@ -92,7 +92,7 @@ namespace xenophon.Controllers
                     $"({BOOKID}, '%_from_all_expenses')"
                     ,
                 $"INSERT INTO Household_Expenses(" +
-                    $"book_id, household_expenses)" +
+                    $"book_id, point)" +
                     $"VALUES(" +
                     $"{BOOKID}, 'rent'), " +
                     $"({BOOKID}, 'communal_payments'), " +
@@ -104,7 +104,7 @@ namespace xenophon.Controllers
                     $"({BOOKID}, '%_from_all_expenses')"
                     ,
                 $"INSERT INTO Vital_Activity(" +
-                    $"book_id, vital_activity)" +
+                    $"book_id, point)" +
                     $"VALUES(" +
                     $"{BOOKID}, 'products'), " +
                     $"({BOOKID}, 'personal_shopping'), " +
@@ -117,7 +117,7 @@ namespace xenophon.Controllers
                     $"({BOOKID}, '%_from_all_expenses')"
                     ,
                 $"INSERT INTO Сhildren(" +
-                    $"book_id, children)" +
+                    $"book_id, point)" +
                     $"VALUES(" +
                     $"{BOOKID}, 'medical_service'), " +
                     $"({BOOKID}, 'cloth'), " +
@@ -130,7 +130,7 @@ namespace xenophon.Controllers
                     $"({BOOKID}, '%_from_all_expenses')"
                     ,
                 $"INSERT INTO Transport(" +
-                    $"book_id, transport)" +
+                    $"book_id, point)" +
                     $"VALUES(" +
                     $"{BOOKID}, 'car_service'), " +
                     $"({BOOKID}, 'fuel'), " +
@@ -140,7 +140,7 @@ namespace xenophon.Controllers
                     $"({BOOKID}, '%_from_all_expenses')"
                     ,
                 $"INSERT INTO Health(" +
-                    $"book_id, health)" +
+                    $"book_id, point)" +
                     $"VALUES(" +
                     $"{BOOKID}, 'doctors_dentists'), " +
                     $"({BOOKID}, 'medicines'), " +

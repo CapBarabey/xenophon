@@ -32,7 +32,9 @@ namespace xenophon
 
         private void bookListGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            Book book = new Book();
+            string bookId = DataBase.getBookId(bookListGrid);
+
+            Book book = new Book(bookId);
 
             book.Show();
 

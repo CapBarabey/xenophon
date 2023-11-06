@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.Sqlite;
+using System.Net;
 using System.Windows.Forms;
 
 namespace xenophon.Controllers
@@ -15,14 +16,14 @@ namespace xenophon.Controllers
         {
             string[] _tables =
             {
-                "Total", "_total",
-                "Incomes", "incomes",
-                "Savings", "savings",
-                "Household_Expenses", "household_expenses",
-                "Vital_Activity", "vital_activity",
-                "Сhildren", "children",
-                "Transport", "transport",
-                "Health", "health",
+                "Total",
+                "Incomes",
+                "Savings",
+                "Household_Expenses",
+                "Vital_Activity",
+                "Сhildren",
+                "Transport",
+                "Health"
             };
 
             if (!File.Exists(path))
@@ -48,26 +49,26 @@ namespace xenophon.Controllers
                     {
                         connection.Open();
 
-                        for (int i = 0; i < _tables.Count(); i += 2)
+                        for (int i = 0; i < _tables.Count(); i ++)
                         {
                             string _tablesTemplate = $"CREATE TABLE {_tables[i]}(" +
                             $"id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, " +
-                            $"book_id INTEGER, " +
-                            $"{_tables[i + 1]} TEXT, " +
-                            $"jan REAL, " +
-                            $"feb REAL, " +
-                            $"mar REAL, " +
-                            $"apr REAL, " +
-                            $"may REAL, " +
-                            $"june REAL, " +
-                            $"july REAL, " +
-                            $"aug REAL, " +
-                            $"sept REAL, " +
-                            $"oct REAL, " +
-                            $"nov REAL, " +
-                            $"dec REAL, " +
-                            $"total REAL," +
-                            $"average REAL," +
+                            $"book_id INTEGER NOT NULL, " +
+                            $"point TEXT NOT NULL, " +
+                            $"jan REAL DEFAULT '', " +
+                            $"feb REAL DEFAULT '', " +
+                            $"mar REAL DEFAULT '', " +
+                            $"apr REAL DEFAULT '', " +
+                            $"may REAL DEFAULT '', " +
+                            $"june REAL DEFAULT '', " +
+                            $"july REAL DEFAULT '', " +
+                            $"aug REAL DEFAULT '', " +
+                            $"sept REAL DEFAULT '', " +
+                            $"oct REAL DEFAULT '', " +
+                            $"nov REAL DEFAULT '', " +
+                            $"dec REAL DEFAULT '', " +
+                            $"total REAL DEFAULT ''," +
+                            $"average REAL DEFAULT ''," +
                             $"FOREIGN KEY (book_id) REFERENCES Books(id) " +
                             $"ON DELETE CASCADE)";
 
@@ -91,12 +92,12 @@ namespace xenophon.Controllers
 
         public void DeleteBook(DataGridView bookList)
         {
-            string bookID = "";
+            string bookID = getBookId(bookList);
 
-            foreach (DataGridViewRow id in bookList.SelectedRows)
-            {
-                bookID = id.Cells[4].Value.ToString();
-            }
+           // foreach (DataGridViewRow id in bookList.SelectedRows)
+           // {
+          //      bookID = id.Cells[4].Value.ToString();
+           // }
 
             using (connection = new SqliteConnection(source))
             {
@@ -108,6 +109,18 @@ namespace xenophon.Controllers
                 command = new SqliteCommand(_delete, connection);
                 command.ExecuteNonQuery();
             }
+        }
+
+        public string getBookId(DataGridView bookList)
+        {
+            string bookId = "";
+
+            foreach (DataGridViewRow id in bookList.SelectedRows)
+            {
+                bookId = id.Cells[4].Value.ToString();
+            }
+
+            return bookId;
         }
     }
 }

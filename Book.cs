@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using xenophon.Views;
 
 namespace xenophon
 {
     public partial class Book : Form
     {
-        public Book()
+        string BOOKID = "";
+
+        BookDisplay PageDisplay = new BookDisplay();
+
+        public Book(string bookID)
         {
+            this.BOOKID = bookID;
             InitializeComponent();
         }
 
@@ -22,6 +19,19 @@ namespace xenophon
             MainMenu mainMenu = new MainMenu();
 
             mainMenu.Show();
+        }
+
+        private void Book_Load(object sender, EventArgs e)
+        {
+            string pageName = pageControl.SelectedTab.Text;
+            PageDisplay.Display(pageGridView, pageName, BOOKID);
+        }
+
+        private void pageControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string pageName = pageControl.SelectedTab.Text;
+            pageControl.SelectedTab.Controls.Add(pageGridView);
+            PageDisplay.Display(pageGridView, pageName, BOOKID);
         }
     }
 }
