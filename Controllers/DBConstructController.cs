@@ -16,14 +16,14 @@ namespace xenophon.Controllers
         {
             string[] _tables =
             {
-                "Total",
-                "Incomes",
-                "Savings",
-                "Household_Expenses",
-                "Vital_Activity",
-                "Сhildren",
-                "Transport",
-                "Health"
+                "total",
+                "incomes",
+                "savings",
+                "household_expenses",
+                "vital_activity",
+                "children",
+                "transport",
+                "health"
             };
 
             if (!File.Exists(path))
@@ -34,7 +34,7 @@ namespace xenophon.Controllers
                     {
                         connection.Open();
 
-                        string _book = "CREATE TABLE Books(" +
+                        string _book = "CREATE TABLE books(" +
                         "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, " +
                         "name TEXT NOT NULL, " +
                         "book_period TEXT NOT NULL, " +

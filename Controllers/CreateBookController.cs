@@ -27,7 +27,7 @@ namespace xenophon.Controllers
                     {
                         connection.Open();
 
-                        string _bookInsert = $"INSERT INTO Books(" +
+                        string _bookInsert = $"INSERT INTO books(" +
                             $"name, book_period, updated, created)" +
                             $"VALUES(" +
                             $"'{NAME}', '{PERIOD}', '{DATE}', '{DATE}')";
@@ -56,98 +56,97 @@ namespace xenophon.Controllers
             //TO DO: переименовать позиции в столбце с их названием
             string[] _inserts =
             {
-                $"INSERT INTO Total(" +
+                $"INSERT INTO total(" +
                     $"book_id, point)" +
                     $"VALUES(" +
-                    $"{BOOKID}, 'incomes'), " +
-                    $"({BOOKID}, 'expenses'), " +
-                    $"({BOOKID}, 'budget_surplus'), " +
-                    $"({BOOKID}, 'savings_adjustment'), " +
-                    $"({BOOKID}, 'balance_ofexpenses'), " +
-                    $"({BOOKID}, 'savings_balance')"
+                    $"{BOOKID}, 'Savings balance'), " +
+                    $"({BOOKID}, 'Balance of expenses'), " +
+                    $"({BOOKID}, 'Savings Adjustment'), " +
+                    $"({BOOKID}, 'Budget surplus'), " +
+                    $"({BOOKID}, 'Expenses'), " +
+                    $"({BOOKID}, 'Incomes')" 
                     ,
-                $"INSERT INTO Incomes(" +
+                $"INSERT INTO incomes(" +
                     $"book_id, point)" +
                     $"VALUES(" +
-                    $"{BOOKID}, 'salary'), " +
-                    $"({BOOKID}, 'hobby'), " +
-                    $"({BOOKID}, 'dividends'), " +
-                    $"({BOOKID}, 'present'), " +
-                    $"({BOOKID}, 'returns_refunds'), " +
-                    $"({BOOKID}, 'cashback'), " +
-                    $"({BOOKID}, 'other'), " +
-                    $"({BOOKID}, 'transfer_from_savings'), " +
-                    $"({BOOKID}, 'total_income')"
+                    $"{BOOKID}, 'Total income'), " +
+                    $"({BOOKID}, 'Transfer from savings'), " +
+                    $"({BOOKID}, 'oOashback'), " +
+                    $"({BOOKID}, 'Returns refunds'), " +
+                    $"({BOOKID}, 'Present'), " +
+                    $"({BOOKID}, 'Dividends'), " +
+                    $"({BOOKID}, 'Hobby'), " +
+                    $"({BOOKID}, 'salary')"
                     ,
-                $"INSERT INTO Savings(" +
+                $"INSERT INTO savings(" +
                     $"book_id, point)" +
                     $"VALUES(" +
-                    $"{BOOKID}, 'to_savings_accounts'), " +
-                    $"({BOOKID}, 'for_unforeseen_expenses'), " +
-                    $"({BOOKID}, 'on_retire'), " +
-                    $"({BOOKID}, 'for_investment'), " +
-                    $"({BOOKID}, 'for_childrens_education'), " +
-                    $"({BOOKID}, 'other'), " +
-                    $"({BOOKID}, 'total_savings'), " +
-                    $"({BOOKID}, '%_from_all_expenses')"
+                    $"{BOOKID}, '% from all expenses'), " +
+                    $"({BOOKID}, 'Total savings'), " +
+                    $"({BOOKID}, 'Other'), " +
+                    $"({BOOKID}, 'For childrens education'), " +
+                    $"({BOOKID}, 'For investment'), " +
+                    $"({BOOKID}, 'On retire'), " +
+                    $"({BOOKID}, 'For unforeseen expenses'), " +
+                    $"({BOOKID}, 'To savings accounts')"
                     ,
-                $"INSERT INTO Household_Expenses(" +
+                $"INSERT INTO household_expenses(" +
                     $"book_id, point)" +
                     $"VALUES(" +
-                    $"{BOOKID}, 'rent'), " +
-                    $"({BOOKID}, 'communal_payments'), " +
-                    $"({BOOKID}, 'internet'), " +
+                    $"{BOOKID}, '% from all expenses'), " +
+                    $"({BOOKID}, 'Total household expenses'), " +
+                    $"({BOOKID}, 'Other'), " +
+                    $"({BOOKID}, 'Phone'), " +
                     $"({BOOKID}, 'Maintenance'), " +
-                    $"({BOOKID}, 'phone'), " +
-                    $"({BOOKID}, 'other'), " +
-                    $"({BOOKID}, 'total_household_expenses'), " +
-                    $"({BOOKID}, '%_from_all_expenses')"
+                    $"({BOOKID}, 'Internet'), " +
+                    $"({BOOKID}, 'Communal payments'), " +
+                    $"({BOOKID}, 'Rent')"
                     ,
-                $"INSERT INTO Vital_Activity(" +
+                $"INSERT INTO vital_activity(" +
                     $"book_id, point)" +
                     $"VALUES(" +
-                    $"{BOOKID}, 'products'), " +
-                    $"({BOOKID}, 'personal_shopping'), " +
-                    $"({BOOKID}, 'cloth'), " +
-                    $"({BOOKID}, 'cafes_restaurants'), " +
-                    $"({BOOKID}, 'dry_cleaning'), " +
-                    $"({BOOKID}, 'hairdressers_salons')," +
-                    $"({BOOKID}, 'other'), " +
-                    $"({BOOKID}, 'total_vital_activity'), " +
-                    $"({BOOKID}, '%_from_all_expenses')"
+                    $"{BOOKID}, '% from all expenses'), " +
+                    $"({BOOKID}, 'Total vital activity'), " +
+                    $"({BOOKID}, 'Other'), " +
+                    $"({BOOKID}, 'Hairdressers salons')," +
+                    $"({BOOKID}, 'Dry cleaning'), " +
+                    $"({BOOKID}, 'Cafes restaurants'), " +
+                    $"({BOOKID}, 'Cloth'), " +
+                    $"({BOOKID}, 'Personal shopping'), " +
+                    $"({BOOKID}, 'Products')"
                     ,
-                $"INSERT INTO Сhildren(" +
+                $"INSERT INTO children(" +
                     $"book_id, point)" +
                     $"VALUES(" +
-                    $"{BOOKID}, 'medical_service'), " +
-                    $"({BOOKID}, 'cloth'), " +
-                    $"({BOOKID}, 'study_supplies'), " +
-                    $"({BOOKID}, 'lunches'), " +
-                    $"({BOOKID}, 'nanny')," +
-                    $"({BOOKID}, 'toys'), " +
-                    $"({BOOKID}, 'nutrition')," +
-                    $"({BOOKID}, 'total_сhildren'), " +
-                    $"({BOOKID}, '%_from_all_expenses')"
+                    $"{BOOKID}, '% from all expenses'), " +
+                    $"({BOOKID}, 'Total сhildren'), " +
+                    $"({BOOKID}, 'Nutrition')," +
+                    $"({BOOKID}, 'Toys'), " +
+                    $"({BOOKID}, 'Nanny')," +
+                    $"({BOOKID}, 'Lunches'), " +
+                    $"({BOOKID}, 'Study supplies'), " +
+                    $"({BOOKID}, 'Cloth'), " +
+                    $"({BOOKID}, 'Medical service')"
                     ,
-                $"INSERT INTO Transport(" +
+                $"INSERT INTO transport(" +
                     $"book_id, point)" +
                     $"VALUES(" +
-                    $"{BOOKID}, 'car_service'), " +
-                    $"({BOOKID}, 'fuel'), " +
-                    $"({BOOKID}, 'public_transport_taxi'), " +
-                    $"({BOOKID}, 'repair'), " +
-                    $"({BOOKID}, 'total_transport'), " +
-                    $"({BOOKID}, '%_from_all_expenses')"
+                    $"{BOOKID}, '% from all expenses'), " +
+                    $"({BOOKID}, 'Total transport'), " +
+                    $"({BOOKID}, 'Repair'), " +
+                    $"({BOOKID}, 'Public transport taxi'), " +
+                    $"({BOOKID}, 'Fuel'), " +
+                    $"({BOOKID}, 'Car service')" 
                     ,
-                $"INSERT INTO Health(" +
+                $"INSERT INTO health(" +
                     $"book_id, point)" +
                     $"VALUES(" +
-                    $"{BOOKID}, 'doctors_dentists'), " +
-                    $"({BOOKID}, 'medicines'), " +
-                    $"({BOOKID}, 'ambulance'), " +
-                    $"({BOOKID}, 'procedures'), " +
-                    $"({BOOKID}, 'total_health'), " +
-                    $"({BOOKID}, '%_from_all_expenses')"
+                    $"{BOOKID}, '% from all expenses'), " +
+                    $"({BOOKID}, 'Total health'), " +
+                    $"({BOOKID}, 'Procedures'), " +
+                    $"({BOOKID}, 'Ambulance'), " +
+                    $"({BOOKID}, 'Medicines'), " +
+                    $"({BOOKID}, 'Doctors dentists')"
             };
 
             try
@@ -176,7 +175,7 @@ namespace xenophon.Controllers
 
         private int getBookId(string name)
         {
-            string _bookID = $"SELECT id FROM Books WHERE name='{name}'";
+            string _bookID = $"SELECT id FROM books WHERE name='{name}'";
             int id = 0;
 
             connection = new SqliteConnection(source);

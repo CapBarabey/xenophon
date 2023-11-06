@@ -23,13 +23,13 @@ namespace xenophon
 
         private void Book_Load(object sender, EventArgs e)
         {
-            string pageName = pageControl.SelectedTab.Text;
+            string pageName = pageControl.SelectedTab.Name;
             PageDisplay.Display(pageGridView, pageName, BOOKID);
         }
 
         private void pageControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string pageName = pageControl.SelectedTab.Text;
+            string pageName = pageControl.SelectedTab.Name;
             pageControl.SelectedTab.Controls.Add(pageGridView);
             PageDisplay.Display(pageGridView, pageName, BOOKID);
         }

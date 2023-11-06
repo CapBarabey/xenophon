@@ -19,7 +19,7 @@ namespace xenophon.Views
             {
                 connection.Open();
 
-                string sqlRequest = "SELECT  name, book_period, updated, created, id FROM Books";
+                string sqlRequest = "SELECT  name, book_period, updated, created, id FROM books";
                 command = new SqliteCommand(sqlRequest, connection);
 
                 reader = command.ExecuteReader();

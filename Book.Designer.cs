@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             pageGridView = new DataGridView();
             point = new DataGridViewTextBoxColumn();
             jan = new DataGridViewTextBoxColumn();
@@ -43,14 +43,20 @@
             oct = new DataGridViewTextBoxColumn();
             nov = new DataGridViewTextBoxColumn();
             dec = new DataGridViewTextBoxColumn();
-            total = new DataGridViewTextBoxColumn();
+            page_total = new DataGridViewTextBoxColumn();
             average = new DataGridViewTextBoxColumn();
             pageControl = new TabControl();
-            total_page = new TabPage();
-            incomes_page = new TabPage();
+            total = new TabPage();
+            incomes = new TabPage();
+            savings = new TabPage();
+            household_expenses = new TabPage();
+            children = new TabPage();
+            health = new TabPage();
+            vital_activity = new TabPage();
+            transport = new TabPage();
             ((System.ComponentModel.ISupportInitialize)pageGridView).BeginInit();
             pageControl.SuspendLayout();
-            total_page.SuspendLayout();
+            total.SuspendLayout();
             SuspendLayout();
             // 
             // pageGridView
@@ -59,16 +65,18 @@
             pageGridView.AllowUserToDeleteRows = false;
             pageGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pageGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            pageGridView.BackgroundColor = Color.WhiteSmoke;
+            pageGridView.BorderStyle = BorderStyle.Fixed3D;
             pageGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            pageGridView.Columns.AddRange(new DataGridViewColumn[] { point, jan, feb, mar, apr, may, june, july, aug, sept, oct, nov, dec, total, average });
+            pageGridView.Columns.AddRange(new DataGridViewColumn[] { point, jan, feb, mar, apr, may, june, july, aug, sept, oct, nov, dec, page_total, average });
             pageGridView.Location = new Point(0, 0);
             pageGridView.Name = "pageGridView";
             pageGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle1.NullValue = "NULL";
-            pageGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.NullValue = "NULL";
+            pageGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
             pageGridView.RowTemplate.Height = 25;
             pageGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            pageGridView.Size = new Size(787, 330);
+            pageGridView.Size = new Size(831, 332);
             pageGridView.TabIndex = 0;
             // 
             // point
@@ -149,11 +157,11 @@
             dec.Name = "dec";
             dec.Width = 52;
             // 
-            // total
+            // page_total
             // 
-            total.HeaderText = "Total";
-            total.Name = "total";
-            total.Width = 57;
+            page_total.HeaderText = "Total";
+            page_total.Name = "page_total";
+            page_total.Width = 57;
             // 
             // average
             // 
@@ -164,43 +172,108 @@
             // pageControl
             // 
             pageControl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pageControl.Controls.Add(total_page);
-            pageControl.Controls.Add(incomes_page);
+            pageControl.Controls.Add(total);
+            pageControl.Controls.Add(incomes);
+            pageControl.Controls.Add(savings);
+            pageControl.Controls.Add(household_expenses);
+            pageControl.Controls.Add(children);
+            pageControl.Controls.Add(health);
+            pageControl.Controls.Add(vital_activity);
+            pageControl.Controls.Add(transport);
             pageControl.Location = new Point(0, 33);
             pageControl.Name = "pageControl";
             pageControl.SelectedIndex = 0;
-            pageControl.Size = new Size(799, 362);
+            pageControl.Size = new Size(841, 362);
             pageControl.TabIndex = 1;
             pageControl.SelectedIndexChanged += pageControl_SelectedIndexChanged;
             // 
-            // total_page
+            // total
             // 
-            total_page.BorderStyle = BorderStyle.Fixed3D;
-            total_page.Controls.Add(pageGridView);
-            total_page.Location = new Point(4, 24);
-            total_page.Name = "total_page";
-            total_page.Padding = new Padding(3);
-            total_page.Size = new Size(791, 334);
-            total_page.TabIndex = 0;
-            total_page.Text = "Total";
-            total_page.UseVisualStyleBackColor = true;
+            total.BackColor = Color.Transparent;
+            total.BorderStyle = BorderStyle.FixedSingle;
+            total.Controls.Add(pageGridView);
+            total.Location = new Point(4, 24);
+            total.Name = "total";
+            total.Padding = new Padding(3);
+            total.Size = new Size(833, 334);
+            total.TabIndex = 0;
+            total.Text = "Total";
+            total.UseVisualStyleBackColor = true;
             // 
-            // incomes_page
+            // incomes
             // 
-            incomes_page.BorderStyle = BorderStyle.Fixed3D;
-            incomes_page.Location = new Point(4, 24);
-            incomes_page.Name = "incomes_page";
-            incomes_page.Padding = new Padding(3);
-            incomes_page.Size = new Size(791, 334);
-            incomes_page.TabIndex = 1;
-            incomes_page.Text = "Incomes";
-            incomes_page.UseVisualStyleBackColor = true;
+            incomes.BorderStyle = BorderStyle.FixedSingle;
+            incomes.Location = new Point(4, 24);
+            incomes.Name = "incomes";
+            incomes.Padding = new Padding(3);
+            incomes.Size = new Size(833, 334);
+            incomes.TabIndex = 1;
+            incomes.Text = "Incomes";
+            incomes.UseVisualStyleBackColor = true;
+            // 
+            // savings
+            // 
+            savings.Location = new Point(4, 24);
+            savings.Name = "savings";
+            savings.Padding = new Padding(3);
+            savings.Size = new Size(833, 334);
+            savings.TabIndex = 2;
+            savings.Text = "Savings";
+            savings.UseVisualStyleBackColor = true;
+            // 
+            // household_expenses
+            // 
+            household_expenses.Location = new Point(4, 24);
+            household_expenses.Name = "household_expenses";
+            household_expenses.Padding = new Padding(3);
+            household_expenses.Size = new Size(833, 334);
+            household_expenses.TabIndex = 3;
+            household_expenses.Text = "Household Expenses";
+            household_expenses.UseVisualStyleBackColor = true;
+            // 
+            // children
+            // 
+            children.Location = new Point(4, 24);
+            children.Name = "children";
+            children.Padding = new Padding(3);
+            children.Size = new Size(833, 334);
+            children.TabIndex = 4;
+            children.Text = "Children";
+            children.UseVisualStyleBackColor = true;
+            // 
+            // health
+            // 
+            health.Location = new Point(4, 24);
+            health.Name = "health";
+            health.Padding = new Padding(3);
+            health.Size = new Size(833, 334);
+            health.TabIndex = 5;
+            health.Text = "Health";
+            health.UseVisualStyleBackColor = true;
+            // 
+            // vital_activity
+            // 
+            vital_activity.Location = new Point(4, 24);
+            vital_activity.Name = "vital_activity";
+            vital_activity.Size = new Size(833, 334);
+            vital_activity.TabIndex = 6;
+            vital_activity.Text = "Vital Activity";
+            vital_activity.UseVisualStyleBackColor = true;
+            // 
+            // transport
+            // 
+            transport.Location = new Point(4, 24);
+            transport.Name = "transport";
+            transport.Size = new Size(833, 334);
+            transport.TabIndex = 7;
+            transport.Text = "Transport";
+            transport.UseVisualStyleBackColor = true;
             // 
             // Book
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(842, 450);
             Controls.Add(pageControl);
             Name = "Book";
             Text = "Book";
@@ -208,7 +281,7 @@
             Load += Book_Load;
             ((System.ComponentModel.ISupportInitialize)pageGridView).EndInit();
             pageControl.ResumeLayout(false);
-            total_page.ResumeLayout(false);
+            total.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -216,8 +289,8 @@
 
         private DataGridView pageGridView;
         private TabControl pageControl;
-        private TabPage total_page;
-        private TabPage incomes_page;
+        private TabPage incomes;
+        private TabPage total;
         private DataGridViewTextBoxColumn point;
         private DataGridViewTextBoxColumn jan;
         private DataGridViewTextBoxColumn feb;
@@ -231,7 +304,13 @@
         private DataGridViewTextBoxColumn oct;
         private DataGridViewTextBoxColumn nov;
         private DataGridViewTextBoxColumn dec;
-        private DataGridViewTextBoxColumn total;
+        private DataGridViewTextBoxColumn page_total;
         private DataGridViewTextBoxColumn average;
+        private TabPage savings;
+        private TabPage household_expenses;
+        private TabPage children;
+        private TabPage health;
+        private TabPage vital_activity;
+        private TabPage transport;
     }
 }
