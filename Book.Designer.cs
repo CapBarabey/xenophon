@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             pageGridView = new DataGridView();
             point = new DataGridViewTextBoxColumn();
             jan = new DataGridViewTextBoxColumn();
@@ -63,8 +63,10 @@
             // 
             pageGridView.AllowUserToAddRows = false;
             pageGridView.AllowUserToDeleteRows = false;
+            pageGridView.AllowUserToResizeRows = false;
             pageGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pageGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            pageGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            pageGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             pageGridView.BackgroundColor = Color.WhiteSmoke;
             pageGridView.BorderStyle = BorderStyle.Fixed3D;
             pageGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -72,102 +74,95 @@
             pageGridView.Location = new Point(0, 0);
             pageGridView.Name = "pageGridView";
             pageGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle2.NullValue = "NULL";
-            pageGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            pageGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            dataGridViewCellStyle1.NullValue = "NULL";
+            pageGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
             pageGridView.RowTemplate.Height = 25;
-            pageGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            pageGridView.Size = new Size(831, 332);
+            pageGridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            pageGridView.ShowCellToolTips = false;
+            pageGridView.Size = new Size(931, 332);
             pageGridView.TabIndex = 0;
+            pageGridView.TabStop = false;
             // 
             // point
             // 
+            point.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             point.HeaderText = "Point";
             point.Name = "point";
+            point.ReadOnly = true;
             point.Width = 60;
             // 
             // jan
             // 
             jan.HeaderText = "Jan";
             jan.Name = "jan";
-            jan.Width = 49;
             // 
             // feb
             // 
             feb.HeaderText = "Feb";
             feb.Name = "feb";
-            feb.Width = 51;
             // 
             // mar
             // 
             mar.HeaderText = "Mar";
             mar.Name = "mar";
-            mar.Width = 53;
             // 
             // apr
             // 
             apr.HeaderText = "Apr";
             apr.Name = "apr";
-            apr.Width = 51;
             // 
             // may
             // 
             may.HeaderText = "May";
             may.Name = "may";
-            may.Width = 55;
             // 
             // june
             // 
             june.HeaderText = "June";
             june.Name = "june";
-            june.Width = 56;
             // 
             // july
             // 
             july.HeaderText = "July";
             july.Name = "july";
-            july.Width = 52;
             // 
             // aug
             // 
             aug.HeaderText = "Aug";
             aug.Name = "aug";
-            aug.Width = 54;
             // 
             // sept
             // 
             sept.HeaderText = "Sept";
             sept.Name = "sept";
-            sept.Width = 55;
             // 
             // oct
             // 
             oct.HeaderText = "Oct";
             oct.Name = "oct";
-            oct.Width = 51;
             // 
             // nov
             // 
             nov.HeaderText = "Nov";
             nov.Name = "nov";
-            nov.Width = 54;
             // 
             // dec
             // 
             dec.HeaderText = "Dec";
             dec.Name = "dec";
-            dec.Width = 52;
             // 
             // page_total
             // 
             page_total.HeaderText = "Total";
             page_total.Name = "page_total";
-            page_total.Width = 57;
+            page_total.ReadOnly = true;
             // 
             // average
             // 
             average.HeaderText = "Average";
             average.Name = "average";
-            average.Width = 75;
+            average.ReadOnly = true;
             // 
             // pageControl
             // 
@@ -183,7 +178,7 @@
             pageControl.Location = new Point(0, 33);
             pageControl.Name = "pageControl";
             pageControl.SelectedIndex = 0;
-            pageControl.Size = new Size(841, 362);
+            pageControl.Size = new Size(941, 362);
             pageControl.TabIndex = 1;
             pageControl.SelectedIndexChanged += pageControl_SelectedIndexChanged;
             // 
@@ -195,7 +190,7 @@
             total.Location = new Point(4, 24);
             total.Name = "total";
             total.Padding = new Padding(3);
-            total.Size = new Size(833, 334);
+            total.Size = new Size(933, 334);
             total.TabIndex = 0;
             total.Text = "Total";
             total.UseVisualStyleBackColor = true;
@@ -206,7 +201,7 @@
             incomes.Location = new Point(4, 24);
             incomes.Name = "incomes";
             incomes.Padding = new Padding(3);
-            incomes.Size = new Size(833, 334);
+            incomes.Size = new Size(897, 334);
             incomes.TabIndex = 1;
             incomes.Text = "Incomes";
             incomes.UseVisualStyleBackColor = true;
@@ -216,7 +211,7 @@
             savings.Location = new Point(4, 24);
             savings.Name = "savings";
             savings.Padding = new Padding(3);
-            savings.Size = new Size(833, 334);
+            savings.Size = new Size(897, 334);
             savings.TabIndex = 2;
             savings.Text = "Savings";
             savings.UseVisualStyleBackColor = true;
@@ -226,7 +221,7 @@
             household_expenses.Location = new Point(4, 24);
             household_expenses.Name = "household_expenses";
             household_expenses.Padding = new Padding(3);
-            household_expenses.Size = new Size(833, 334);
+            household_expenses.Size = new Size(897, 334);
             household_expenses.TabIndex = 3;
             household_expenses.Text = "Household Expenses";
             household_expenses.UseVisualStyleBackColor = true;
@@ -236,7 +231,7 @@
             children.Location = new Point(4, 24);
             children.Name = "children";
             children.Padding = new Padding(3);
-            children.Size = new Size(833, 334);
+            children.Size = new Size(897, 334);
             children.TabIndex = 4;
             children.Text = "Children";
             children.UseVisualStyleBackColor = true;
@@ -246,7 +241,7 @@
             health.Location = new Point(4, 24);
             health.Name = "health";
             health.Padding = new Padding(3);
-            health.Size = new Size(833, 334);
+            health.Size = new Size(897, 334);
             health.TabIndex = 5;
             health.Text = "Health";
             health.UseVisualStyleBackColor = true;
@@ -255,7 +250,7 @@
             // 
             vital_activity.Location = new Point(4, 24);
             vital_activity.Name = "vital_activity";
-            vital_activity.Size = new Size(833, 334);
+            vital_activity.Size = new Size(897, 334);
             vital_activity.TabIndex = 6;
             vital_activity.Text = "Vital Activity";
             vital_activity.UseVisualStyleBackColor = true;
@@ -264,7 +259,7 @@
             // 
             transport.Location = new Point(4, 24);
             transport.Name = "transport";
-            transport.Size = new Size(833, 334);
+            transport.Size = new Size(897, 334);
             transport.TabIndex = 7;
             transport.Text = "Transport";
             transport.UseVisualStyleBackColor = true;
@@ -273,9 +268,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(842, 450);
+            ClientSize = new Size(942, 450);
             Controls.Add(pageControl);
             Name = "Book";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Book";
             FormClosed += Book_FormClosed;
             Load += Book_Load;
@@ -291,6 +287,12 @@
         private TabControl pageControl;
         private TabPage incomes;
         private TabPage total;
+        private TabPage savings;
+        private TabPage household_expenses;
+        private TabPage children;
+        private TabPage health;
+        private TabPage vital_activity;
+        private TabPage transport;
         private DataGridViewTextBoxColumn point;
         private DataGridViewTextBoxColumn jan;
         private DataGridViewTextBoxColumn feb;
@@ -306,11 +308,5 @@
         private DataGridViewTextBoxColumn dec;
         private DataGridViewTextBoxColumn page_total;
         private DataGridViewTextBoxColumn average;
-        private TabPage savings;
-        private TabPage household_expenses;
-        private TabPage children;
-        private TabPage health;
-        private TabPage vital_activity;
-        private TabPage transport;
     }
 }
