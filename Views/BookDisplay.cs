@@ -50,6 +50,14 @@ namespace xenophon.Views
                 }
             }
 
+            foreach (DataGridViewRow row in pageGrid.Rows)
+            {
+                if (row.Cells[0].Value.ToString().StartsWith("Total") || row.Cells[0].Value.ToString().StartsWith("% from"))
+                {
+                    row.ReadOnly = true;
+                }
+            }
+
             pageGrid.ClearSelection();
         }
     }

@@ -94,11 +94,6 @@ namespace xenophon.Controllers
         {
             string bookID = getBookId(bookList);
 
-           // foreach (DataGridViewRow id in bookList.SelectedRows)
-           // {
-          //      bookID = id.Cells[4].Value.ToString();
-           // }
-
             using (connection = new SqliteConnection(source))
             {
                 connection.Open();

@@ -83,6 +83,7 @@
             pageGridView.Size = new Size(931, 332);
             pageGridView.TabIndex = 0;
             pageGridView.TabStop = false;
+            pageGridView.CellEndEdit += pageGridView_CellEndEdit;
             // 
             // point
             // 
@@ -201,7 +202,7 @@
             incomes.Location = new Point(4, 24);
             incomes.Name = "incomes";
             incomes.Padding = new Padding(3);
-            incomes.Size = new Size(897, 334);
+            incomes.Size = new Size(933, 334);
             incomes.TabIndex = 1;
             incomes.Text = "Incomes";
             incomes.UseVisualStyleBackColor = true;
@@ -211,7 +212,7 @@
             savings.Location = new Point(4, 24);
             savings.Name = "savings";
             savings.Padding = new Padding(3);
-            savings.Size = new Size(897, 334);
+            savings.Size = new Size(933, 334);
             savings.TabIndex = 2;
             savings.Text = "Savings";
             savings.UseVisualStyleBackColor = true;
@@ -221,7 +222,7 @@
             household_expenses.Location = new Point(4, 24);
             household_expenses.Name = "household_expenses";
             household_expenses.Padding = new Padding(3);
-            household_expenses.Size = new Size(897, 334);
+            household_expenses.Size = new Size(933, 334);
             household_expenses.TabIndex = 3;
             household_expenses.Text = "Household Expenses";
             household_expenses.UseVisualStyleBackColor = true;
@@ -231,7 +232,7 @@
             children.Location = new Point(4, 24);
             children.Name = "children";
             children.Padding = new Padding(3);
-            children.Size = new Size(897, 334);
+            children.Size = new Size(933, 334);
             children.TabIndex = 4;
             children.Text = "Children";
             children.UseVisualStyleBackColor = true;
@@ -241,7 +242,7 @@
             health.Location = new Point(4, 24);
             health.Name = "health";
             health.Padding = new Padding(3);
-            health.Size = new Size(897, 334);
+            health.Size = new Size(933, 334);
             health.TabIndex = 5;
             health.Text = "Health";
             health.UseVisualStyleBackColor = true;
@@ -250,7 +251,7 @@
             // 
             vital_activity.Location = new Point(4, 24);
             vital_activity.Name = "vital_activity";
-            vital_activity.Size = new Size(897, 334);
+            vital_activity.Size = new Size(933, 334);
             vital_activity.TabIndex = 6;
             vital_activity.Text = "Vital Activity";
             vital_activity.UseVisualStyleBackColor = true;
@@ -259,7 +260,7 @@
             // 
             transport.Location = new Point(4, 24);
             transport.Name = "transport";
-            transport.Size = new Size(897, 334);
+            transport.Size = new Size(933, 334);
             transport.TabIndex = 7;
             transport.Text = "Transport";
             transport.UseVisualStyleBackColor = true;

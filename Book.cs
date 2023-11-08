@@ -1,16 +1,19 @@
-﻿using xenophon.Views;
+﻿using xenophon.Controllers;
+using xenophon.Views;
 
 namespace xenophon
 {
     public partial class Book : Form
     {
         string BOOKID = "";
+        string PAGE_NAME = "";
 
         BookDisplay PageDisplay = new BookDisplay();
+        BookController Total = new BookController();
 
         public Book(string bookID)
         {
-            this.BOOKID = bookID;
+            BOOKID = bookID;
             InitializeComponent();
         }
 
@@ -23,15 +26,25 @@ namespace xenophon
 
         private void Book_Load(object sender, EventArgs e)
         {
-            string pageName = pageControl.SelectedTab.Name;
-            PageDisplay.Display(pageGridView, pageName, BOOKID);
+            PAGE_NAME = pageControl.SelectedTab.Name;
+            PageDisplay.Display(pageGridView, PAGE_NAME, BOOKID);
         }
 
         private void pageControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string pageName = pageControl.SelectedTab.Name;
+            PAGE_NAME = pageControl.SelectedTab.Name;
             pageControl.SelectedTab.Controls.Add(pageGridView);
-            PageDisplay.Display(pageGridView, pageName, BOOKID);
+            PageDisplay.Display(pageGridView, PAGE_NAME, BOOKID);
         }
+
+        private void pageGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            PAGE_NAME = pageControl.SelectedTab.Name;
+            Total.Total(pageGridView);
+            PageDisplay.Display(pageGridView, PAGE_NAME, BOOKID);
+        }
+
+
+
     }
 }
