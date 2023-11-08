@@ -71,7 +71,7 @@ namespace xenophon.Controllers
                     $"VALUES(" +
                     $"{BOOKID}, 'Total income'), " +
                     $"({BOOKID}, 'Transfer from savings'), " +
-                    $"({BOOKID}, 'oOashback'), " +
+                    $"({BOOKID}, 'Cashback'), " +
                     $"({BOOKID}, 'Returns refunds'), " +
                     $"({BOOKID}, 'Present'), " +
                     $"({BOOKID}, 'Dividends'), " +

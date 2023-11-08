@@ -41,10 +41,7 @@ namespace xenophon
         {
             PAGE_NAME = pageControl.SelectedTab.Name;
             Total.Total(pageGridView);
-            PageDisplay.Display(pageGridView, PAGE_NAME, BOOKID);
+            // PageDisplay.Display(pageGridView, PAGE_NAME, BOOKID);
         }
-
-
-
     }
 }

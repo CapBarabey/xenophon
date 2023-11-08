@@ -30,6 +30,15 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             pageGridView = new DataGridView();
+            pageControl = new TabControl();
+            total = new TabPage();
+            incomes = new TabPage();
+            savings = new TabPage();
+            household_expenses = new TabPage();
+            children = new TabPage();
+            health = new TabPage();
+            vital_activity = new TabPage();
+            transport = new TabPage();
             point = new DataGridViewTextBoxColumn();
             jan = new DataGridViewTextBoxColumn();
             feb = new DataGridViewTextBoxColumn();
@@ -45,15 +54,6 @@
             dec = new DataGridViewTextBoxColumn();
             page_total = new DataGridViewTextBoxColumn();
             average = new DataGridViewTextBoxColumn();
-            pageControl = new TabControl();
-            total = new TabPage();
-            incomes = new TabPage();
-            savings = new TabPage();
-            household_expenses = new TabPage();
-            children = new TabPage();
-            health = new TabPage();
-            vital_activity = new TabPage();
-            transport = new TabPage();
             ((System.ComponentModel.ISupportInitialize)pageGridView).BeginInit();
             pageControl.SuspendLayout();
             total.SuspendLayout();
@@ -71,12 +71,18 @@
             pageGridView.BorderStyle = BorderStyle.Fixed3D;
             pageGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             pageGridView.Columns.AddRange(new DataGridViewColumn[] { point, jan, feb, mar, apr, may, june, july, aug, sept, oct, nov, dec, page_total, average });
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            pageGridView.DefaultCellStyle = dataGridViewCellStyle1;
             pageGridView.Location = new Point(0, 0);
             pageGridView.Name = "pageGridView";
             pageGridView.RowHeadersVisible = false;
             pageGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle1.NullValue = "NULL";
-            pageGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
             pageGridView.RowTemplate.Height = 25;
             pageGridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
             pageGridView.ShowCellToolTips = false;
@@ -84,86 +90,6 @@
             pageGridView.TabIndex = 0;
             pageGridView.TabStop = false;
             pageGridView.CellEndEdit += pageGridView_CellEndEdit;
-            // 
-            // point
-            // 
-            point.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            point.HeaderText = "Point";
-            point.Name = "point";
-            point.ReadOnly = true;
-            point.Width = 60;
-            // 
-            // jan
-            // 
-            jan.HeaderText = "Jan";
-            jan.Name = "jan";
-            // 
-            // feb
-            // 
-            feb.HeaderText = "Feb";
-            feb.Name = "feb";
-            // 
-            // mar
-            // 
-            mar.HeaderText = "Mar";
-            mar.Name = "mar";
-            // 
-            // apr
-            // 
-            apr.HeaderText = "Apr";
-            apr.Name = "apr";
-            // 
-            // may
-            // 
-            may.HeaderText = "May";
-            may.Name = "may";
-            // 
-            // june
-            // 
-            june.HeaderText = "June";
-            june.Name = "june";
-            // 
-            // july
-            // 
-            july.HeaderText = "July";
-            july.Name = "july";
-            // 
-            // aug
-            // 
-            aug.HeaderText = "Aug";
-            aug.Name = "aug";
-            // 
-            // sept
-            // 
-            sept.HeaderText = "Sept";
-            sept.Name = "sept";
-            // 
-            // oct
-            // 
-            oct.HeaderText = "Oct";
-            oct.Name = "oct";
-            // 
-            // nov
-            // 
-            nov.HeaderText = "Nov";
-            nov.Name = "nov";
-            // 
-            // dec
-            // 
-            dec.HeaderText = "Dec";
-            dec.Name = "dec";
-            // 
-            // page_total
-            // 
-            page_total.HeaderText = "Total";
-            page_total.Name = "page_total";
-            page_total.ReadOnly = true;
-            // 
-            // average
-            // 
-            average.HeaderText = "Average";
-            average.Name = "average";
-            average.ReadOnly = true;
             // 
             // pageControl
             // 
@@ -264,6 +190,86 @@
             transport.TabIndex = 7;
             transport.Text = "Transport";
             transport.UseVisualStyleBackColor = true;
+            // 
+            // point
+            // 
+            point.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            point.HeaderText = "Point";
+            point.Name = "point";
+            point.ReadOnly = true;
+            point.Width = 60;
+            // 
+            // jan
+            // 
+            jan.HeaderText = "Jan";
+            jan.Name = "jan";
+            // 
+            // feb
+            // 
+            feb.HeaderText = "Feb";
+            feb.Name = "feb";
+            // 
+            // mar
+            // 
+            mar.HeaderText = "Mar";
+            mar.Name = "mar";
+            // 
+            // apr
+            // 
+            apr.HeaderText = "Apr";
+            apr.Name = "apr";
+            // 
+            // may
+            // 
+            may.HeaderText = "May";
+            may.Name = "may";
+            // 
+            // june
+            // 
+            june.HeaderText = "June";
+            june.Name = "june";
+            // 
+            // july
+            // 
+            july.HeaderText = "July";
+            july.Name = "july";
+            // 
+            // aug
+            // 
+            aug.HeaderText = "Aug";
+            aug.Name = "aug";
+            // 
+            // sept
+            // 
+            sept.HeaderText = "Sept";
+            sept.Name = "sept";
+            // 
+            // oct
+            // 
+            oct.HeaderText = "Oct";
+            oct.Name = "oct";
+            // 
+            // nov
+            // 
+            nov.HeaderText = "Nov";
+            nov.Name = "nov";
+            // 
+            // dec
+            // 
+            dec.HeaderText = "Dec";
+            dec.Name = "dec";
+            // 
+            // page_total
+            // 
+            page_total.HeaderText = "Total";
+            page_total.Name = "page_total";
+            page_total.ReadOnly = true;
+            // 
+            // average
+            // 
+            average.HeaderText = "Average";
+            average.Name = "average";
+            average.ReadOnly = true;
             // 
             // Book
             // 

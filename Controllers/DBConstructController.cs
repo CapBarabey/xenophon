@@ -55,20 +55,20 @@ namespace xenophon.Controllers
                             $"id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, " +
                             $"book_id INTEGER NOT NULL, " +
                             $"point TEXT NOT NULL, " +
-                            $"jan REAL DEFAULT '', " +
-                            $"feb REAL DEFAULT '', " +
-                            $"mar REAL DEFAULT '', " +
-                            $"apr REAL DEFAULT '', " +
-                            $"may REAL DEFAULT '', " +
-                            $"june REAL DEFAULT '', " +
-                            $"july REAL DEFAULT '', " +
-                            $"aug REAL DEFAULT '', " +
-                            $"sept REAL DEFAULT '', " +
-                            $"oct REAL DEFAULT '', " +
-                            $"nov REAL DEFAULT '', " +
-                            $"dec REAL DEFAULT '', " +
-                            $"total REAL DEFAULT ''," +
-                            $"average REAL DEFAULT ''," +
+                            $"jan INTEGER, " +
+                            $"feb INTEGER, " +
+                            $"mar INTEGER, " +
+                            $"apr INTEGER, " +
+                            $"may INTEGER, " +
+                            $"june INTEGER, " +
+                            $"july INTEGER, " +
+                            $"aug INTEGER, " +
+                            $"sept INTEGER, " +
+                            $"oct INTEGER, " +
+                            $"nov INTEGER, " +
+                            $"dec INTEGER, " +
+                            $"total INTEGER," +
+                            $"average INTEGER," +
                             $"FOREIGN KEY (book_id) REFERENCES Books(id) " +
                             $"ON DELETE CASCADE)";
 

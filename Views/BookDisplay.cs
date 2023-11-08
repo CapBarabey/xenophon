@@ -31,21 +31,21 @@ namespace xenophon.Views
                     while (reader.Read())
                     {
                         pageGrid.Rows.Insert(0,
-                            reader.GetString(0),
-                            reader.GetString(1),
-                            reader.GetString(2),
-                            reader.GetString(3),
-                            reader.GetString(4),
-                            reader.GetString(5),
-                            reader.GetString(6),
-                            reader.GetString(7),
-                            reader.GetString(8),
-                            reader.GetString(9),
-                            reader.GetString(10),
-                            reader.GetString(11),
-                            reader.GetString(12),
-                            reader.GetString(13),
-                            reader.GetString(14));
+                           reader.GetValue(0),
+                           reader.GetValue(1),
+                           reader.GetValue(2),
+                           reader.GetValue(3),
+                           reader.GetValue(4),
+                           reader.GetValue(5),
+                           reader.GetValue(6),
+                           reader.GetValue(7),
+                           reader.GetValue(8),
+                           reader.GetValue(9),
+                           reader.GetValue(10),
+                           reader.GetValue(11),
+                           reader.GetValue(12),
+                           reader.GetValue(13),
+                           reader.GetValue(14));
                     }
                 }
             }
